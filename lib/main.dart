@@ -45,7 +45,23 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Text("Display list here"),
+      body: ListView.builder(
+        itemCount: xkcdComics.length,
+        itemBuilder: (BuildContext context, int index) {
+          Comic comic = xkcdComics[index];
+          return Card(
+            color: Colors.amber[100],
+            elevation: 5.0,
+            shape: BeveledRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: ListTile(
+              title: Text(comic.title),
+              subtitle: Text("Number: ${comic.num.toString()}"),
+              leading: Image (image: NetworkImage(comic.img),),
+            ),
+          );
+        },),
     );
   }
 }
