@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'XKCD Comic List'),
     );
   }
 }
@@ -36,7 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
     xkcdComics.add( new Comic(163,"https://imgs.xkcd.com/comics/donald_knuth.png","Donald Knuth"));
     xkcdComics.add( new Comic(2228,"https://imgs.xkcd.com/comics/machine_learning_captcha.png","Machine Learning Captcha"));
     xkcdComics.add( new Comic(1667,"https://imgs.xkcd.com/comics/algorithms.png","Algorithms"));
-    // feel free to add your own comic from https://www.explainxkcd.com/wiki/index.php/Category:Programming
+    // Adding one!
+    xkcdComics.add( new Comic(1742, "https://imgs.xkcd.com/comics/will_it_work.png", "Will It Work"));
   }
 
   @override
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
         itemBuilder: (BuildContext context, int index) {
           Comic comic = xkcdComics[index];
           return Card(
-            color: Colors.amber[100],
+            color: Colors.lightBlue[50],
             elevation: 5.0,
             shape: BeveledRectangleBorder(
               borderRadius: BorderRadius.circular(15),
